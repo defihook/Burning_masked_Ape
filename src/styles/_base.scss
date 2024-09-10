@@ -1,0 +1,483 @@
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page-loading {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(12px);
+    background: #000000b3;
+    .loading-box {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        box-shadow: $card-shadow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $back-color;
+    }
+}
+
+.container {
+    max-width: 860px;
+    margin-right: auto;
+    margin-left: auto;
+    @media (max-width: 908px) {
+        margin-right: 24px;
+        margin-left: 24px;
+        max-width: calc(100% - 48px);
+    }
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+    @media (max-width: 992px) {
+        position: absolute;
+    }
+}
+.header-content {
+    margin-top: 23px;
+    max-width: 990px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 1350px) {
+        max-width: calc(100% - 40px);
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .header-left {
+        a {
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+    }
+    .header-center {
+        ul {
+            list-style: none;
+            display: flex;
+            li {
+                margin-right: 15px;
+                margin-left: 15px;
+                a {
+                    padding: 20px 15px;
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-family: $font-main;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-decoration: none;
+                    transition: all 0.3s;
+                    &.active {
+                        color: #8873ff;
+                    }
+                    &:hover {
+                        color: #8873ff;
+                    }
+                }
+            }
+        }
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+    .header-right {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 1400px) {
+        }
+        @media (max-width: 992px) {
+            margin-right: 0;
+        }
+    }
+}
+.social-link {
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        height: 50px;
+        transition: all 0.3s;
+        @media (max-width: 576px) {
+            height: 30px;
+        }
+    }
+    &:first-child {
+        margin-left: 0;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+    &:hover {
+        img {
+            filter: brightness(0.8);
+        }
+    }
+}
+.header-wallet {
+    right: 23px;
+    top: 38px;
+    display: flex;
+    @media (max-width: 992px) {
+        display: flex;
+        align-items: center;
+        .mobile-menu {
+            margin-left: 16px;
+            z-index: 100;
+        }
+    }
+}
+main {
+    background-color: #1b1b1b;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.bottom-pattern {
+    position: absolute;
+    left: -73px;
+    bottom: -10px;
+}
+button {
+    cursor: pointer;
+}
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.col-12 {
+    width: calc(100% - 40px);
+    margin-right: 20px;
+    margin-left: 20px;
+    @media (max-width: 992px) {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+.col-half {
+    width: calc(50% - 40px);
+    margin-right: 20px;
+    margin-left: 20px;
+    @media (max-width: 992px) {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+.col-3 {
+    width: calc(25% - 30px);
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.pb-80 {
+    padding-bottom: 80px;
+}
+.mobile-menu {
+    display: none;
+    @media (max-width: 992px) {
+        display: block;
+        button {
+            margin-left: 16px;
+            border: none;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+.mobile-nav {
+    display: none;
+    @media (max-width: 992px) {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        ul {
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 20px 0;
+                a {
+                    font-family: $font-second;
+                    color: #fff;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border-color: #fff3 !important;
+}
+.MuiSelect-select {
+    color: #fff !important;
+    font-family: $font-second !important;
+}
+.MuiSelect-icon {
+    color: #fff3 !important;
+}
+.MuiTouchRipple-root {
+    font-family: $font-second !important;
+}
+.MuiRadio-root {
+    .MuiSvgIcon-root {
+        fill: #fff !important;
+    }
+}
+.MuiTypography-root {
+    font-family: $font-main !important;
+}
+.MuiFormGroup-root {
+    min-height: 56px !important;
+}
+.winner-address {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 5px 0;
+}
+.copy-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    .copied {
+        color: $primary-color;
+        font-weight: bold;
+    }
+}
+
+.hero-banner {
+    padding-top: 80px;
+    min-height: 321px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-direction: column;
+    h2 {
+        font-family: "ArcadeClassic";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 40px;
+        margin: 24px 0;
+        text-transform: uppercase;
+    }
+    p {
+        font-family: "Minecraft";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+    }
+}
+.page-container {
+    max-width: 604px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 180px;
+}
+.steps {
+    max-width: 447px;
+    margin: 46px auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .step-item {
+        h5 {
+            font-family: "Minecraft";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 18px;
+            color: #fd2066;
+            width: 163px;
+            border-top: 1px solid #fd1c65;
+            padding: 4px 0;
+        }
+        p {
+            font-family: "Minecraft";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            svg {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+.burn-control {
+    text-align: right;
+}
+.btn-next {
+    font-family: "Minecraft";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #ffffff;
+    padding: 5px 20px;
+    border: none;
+    background-color: #fd2066;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    height: 27px;
+    &.btn-main {
+        width: 160px;
+    }
+}
+.header-logo {
+    display: flex;
+    align-items: center;
+    span {
+        font-family: "SomethingStrange";
+        font-size: 24px;
+        color: #ffceaa;
+        .hightlight {
+            margin-right: 10px;
+            color: #fd2066;
+        }
+    }
+}
+.nft-lists {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    p.noties {
+        font-family: "Minecraft";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #ff5c00;
+        margin: 5px 0;
+    }
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+}
+.nft-card {
+    padding: 5px 4px;
+    .media {
+        width: 117px;
+        height: 117px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .card-content {
+        p {
+            font-family: "Minecraft";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #ffffff;
+            margin-top: 17px;
+        }
+    }
+    &.selected {
+        box-shadow: 1px 1px 0 #fd2066, -1px -1px 0 #fd2066, 1px -1px 0 #fd2066, -1px 1px 0 #fd2066;
+    }
+}
+@media (max-width: 480px) {
+    .hero-banner p {
+        font-size: 16px;
+    }
+    .steps .step-item p {
+        font-size: 12px;
+    }
+    .hero-banner img {
+        width: 160px;
+    }
+    .steps {
+        flex-direction: column;
+        align-items: flex-start;
+        .step-item {
+            &:first-child {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .btn-next {
+        width: 100% !important;
+    }
+    .header-logo span {
+        display: none;
+    }
+}
+.total-burned {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+    span {
+        padding: 5px 10px;
+        font-family: "Minecraft";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #ffffff;
+        border: 1px solid #fd2066;
+        border-radius: 3px;
+        margin: 0 4px;
+    }
+}
